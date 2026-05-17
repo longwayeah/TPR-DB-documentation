@@ -7,7 +7,7 @@ description: Documentation for the automatic processing the CRITT TPR-DB complet
 
 # The TPR Pipeline
 
-The [TPR pipeline](https://github.com/Critt-Kent/TPR-DB-web-app/tree/main/libs/tpr_pipeline) prepares and extracts basic linguistic and behavioral units from the raw logging data and enriches the units with further information. It integrates conventional monolingual Natural Language Processing (NLP) libraries ([NLTK](https://www.nltk.org/) and [Stanza](https://stanfordnlp.github.io/stanza/), bilingual alignment tools (i.e., [SimAlign](https://github.com/cisnlp/simalign)), and custom-built components for keystroke-to-word and fixation-to-word mapping. The extracted and enriched units are stored in a `SessionProps` file. 
+The [TPR pipeline](https://github.com/Critt-Kent/TPR-DB-web-app/tree/main/libs/tpr_pipeline) extracts basic linguistic and behavioral units from the raw logging data and enriches the units with additional information. It integrates conventional monolingual Natural Language Processing (NLP) libraries ([NLTK](https://www.nltk.org/) and [Stanza](https://stanfordnlp.github.io/stanza/)), bilingual alignment tools (i.e., [SimAlign](https://github.com/cisnlp/simalign)), and custom-built components for keystroke-to-word and fixation-to-word mapping. The extracted and enriched units are stored in a `SessionProps` file for further processing. 
 
 ## Monolingual Processing
 
