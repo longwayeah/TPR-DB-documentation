@@ -74,8 +74,8 @@ nav = [
   ]},
   { "Visualize & Analyze" = [
     "analyze/utilities.md",
-    "analyze/progression.md",
-    "analyze/replay.md",
+    "analyze/academy.md",
+    "analyze/advanced.md",
   ]},
 ]
 

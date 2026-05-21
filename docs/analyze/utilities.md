@@ -2,12 +2,14 @@
 icon: lucide/library-big
 ---
 
-# Utility Libraries
+# Utilities
 
-## Python
+## `tprdb-utilities` (Python Library)
 
-Here are some Python libraries linked
+The Python library `tprdb-utilities` ([GitHub Repo](https://github.com/Critt-Kent/tprdb-utilities)) is a package that makes it easy to fetch data tables from specific TPR-DB studies and then read them into data frames for analysis.
 
-## Shiny R
+## Progression Graphs
 
-Here is how you use Shiny R
+Placeholder text
+
+### Shiny R
