@@ -57,6 +57,8 @@ Since the pupil size and their changes is specific to every participant, a norma
 For each gaze sample point $SP$, TPR-DB 3.0 computes an effective pupil size $SP_p$ as the mean of the left and right pupil diameters when both are available (i.e., diameter $> 0$) for binocular tracking, and otherwise falls back to the available monocular diameter. Each $SP_p$ is then normalised by the session median. In addition, TPR-DB 3.0 computes two measures of dispersion per participant session: a robust median absolute deviation and a standard deviation
 
 - $`\mathtt{baseline}  = median(SP_{p})`$
+- $`\text{baseline}  = median(SP_{p})`$
+- $`baseline} = median(SP_{p})`$
 - $\mathtt{pupil\_mad} = median(abs(SP_{p} -  \mathtt{baseline}))$
 - $\mathtt{pupil\_std} = std(SP_{p})$
 
