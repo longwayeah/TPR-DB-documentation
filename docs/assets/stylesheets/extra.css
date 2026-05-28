@@ -1,0 +1,19 @@
+/* Inline definition list: • Term   Definition (one pair per row) */
+.dl-inline dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0 0.6em;
+  align-items: baseline;
+}
+
+.dl-inline dt::before {
+  content: "\2022\00a0"; /* bullet + non-breaking space */
+}
+
+.dl-inline dd {
+  margin: 0 !important;
+}
+
+.dl-inline dd > p {
+  margin: 0.5em 0 0 0 !important;
+}
