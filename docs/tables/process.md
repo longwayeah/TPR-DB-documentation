@@ -77,13 +77,13 @@ Based on these considerations, it is possible to compute pause metrics as follow
 
 PR = (`PreGap` + `TG`) / (`Dur` +1)
 
-$ \text{PR} = \frac{\text{PreGap + TG} {\text{Dur} +1} $
+$\text{PR} = \frac{\text{PreGap + TG} {\text{Dur} +1}$
 
-$ \text{PWR}_S = \frac{TB} {\text{`TokS`}} $
+$\text{PWR}_S = \frac{TB} {\text{`TokS`}}$
 
-$ \text{PWR}_T = \frac{TB} {\text{`TokT`}} $
+$\text{PWR}_T = \frac{TB} {\text{`TokT`}}$
 
-$ \text{APR} = \frac{TG}{TB} / \frac{TD}/{\text{TokT}} = \frac{TG * TokT}{TB * TD} $
+$$\text{APR} = \frac{TG}{TB} / \frac{TD}/{\text{TokT}} = \frac{TG * TokT}{TB * TD}$$
 
 
 [^lacruz]:
