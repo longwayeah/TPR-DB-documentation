@@ -4,16 +4,16 @@ icon: lucide/grid-2x2-check
 
 # Data Tables (3.0)
 
-The [TPR feature extraction](https://github.com/Critt-Kent/TPR-DB-web-app/tree/main/libs/tables) generates 14 summary tables, each of which describes the relation between the translation process and the translation product from a different angle. Each row in a TPR-DB table describes a process or product unit, while the columns contain the values of features (or attributes) for the unit. The attributes can be categorical or numerical (integers or real valued numbers).
+The [TPR feature extraction](https://github.com/Critt-Kent/TPR-DB-web-app/tree/main/libs/tables) generates 14 summary tables, each of which describes the relation between the translation process and the translation product from a different angle. Each row in a TPR-DB table describes a process or product unit, while the columns contain the values of the features (or attributes) for the unit. The attributes can be categorical or numerical (integers or real valued numbers).
 Eleven of these tables are already part of the previous [TPR-DB version 2.0](https://drive.google.com/file/d/1FgOSNcpbjlxdo6MM_jf3Pw5wDS6S9-BB/view), and described there in some detail, albeit several features have changed. The [documentation of the CRITT TPR-DB 2.0, (pp. 18 ff)](https://drive.google.com/file/d/1FgOSNcpbjlxdo6MM_jf3Pw5wDS6S9-BB/view) classifies the tables into:
 
 
 | # | Category | Units | Abbreviations |
 |---|----------|-------|---------------|
-| 1 | Basic product unit tables | Source token, Target token | ST, TT |
-| 2 | Composed product unit tables | Segment summary, Session summary, Alignment groups | SG, SS, AG[^AG] |
-| 3 | Basic process unit tables | Keystroke data, Fixation data | KD, FD |
-| 4 | Composed process unit tables | Activity unit, Fixation unit, Production unit | AU, FU, PU |
+| 1 | Basic product units | Source token, Target token | ST, TT |
+| 2 | Composed product units | Segment summary, Session summary, Alignment groups | SG, SS, AG[^AG] |
+| 3 | Basic process units | Keystroke data, Fixation data | KD, FD |
+| 4 | Composed process units | Activity unit, Fixation unit, Keystroke unit, Production unit, HORF states, HORF cycles | AU, FU, KU, PU, HS, HC |
 | 5 | Usage of external resources (inputlog) | External resources | EX |
 
 

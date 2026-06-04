@@ -10,6 +10,8 @@ The TPR-DB 3.0 processes all source texts and translations using NLTK (Natuaral 
 
 Tokenization segmentes the raw text into individual tokens, while MWT expansion resolved language-specific contractions and fused forms into their constituent units — a step particularly relevant for morphologically rich languages. PoS tagging and lemmatization assign grammatical categories and canonical base forms to each token, enabling normalized frequency and complexity measures. NER identifies and classifies named entities such as persons, locations, and organizations, providing a measure of referential density. Finally, dependency parsing established syntactic relationships between tokens, yielding tree-based measures of structural complexity such as mean dependency distance and branching factor. Together, these annotations form the basis for a rich set of linguistic product features capturing both surface form and underlying syntactic structure.
 
+
+
 ## Information and Entropy Features
 
 To capture the informational complexity of translation decisions at the word level, we computed word translation entropy (HTra) for each source token. Word translation entropy quantifies the uncertainty inherent in mapping a source language word to its target language equivalent — a high entropy value indicates that a given source word has many plausible translations of roughly equal probability, reflecting genuine translational ambiguity, while a low entropy value indicates that the translation choice is largely deterministic. 
