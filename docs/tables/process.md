@@ -17,7 +17,7 @@ The features `STid`, `TTid`, `SGid`, and `TGid` appear in several tables. `STid`
 
 During [keystroke-to-word mapping](#Keystroke-to-word Mapping) each keystroke is associated with a unique target word. The Id of this target word is the `TTid`, an integer, in the KD file. During [Bilingual Alignment](#Bilingual Alignment) source words and target words are connected in a way such that one target word can be associated with several source words,  i.e., the `SGid`. Each `SGid` is, in turn, aligned with one or more target words, which together are the `TGid`. Thus, the `TTid` is part of the `TGid`, but the latter may contain several elements. The `STid` is smallest number in the source group. 
 
-For instance, a target token $8$ can be aligned with source tokens $8$ and $9$, thus the `SGid` value is $8+9$ and `STid` is $8$. If this source group is aligned to a group of target words, say, target words $8$ and $10$, the `TGid` has the vaue $8+10$.  
+For instance, a target token $\mathsf{8}$ can be aligned with source tokens $\mathtt{8}$ and $\mathbb{9}$, thus the `SGid` value is $\mathsf{8+9}$ and `STid` is $\mathtt{8}$. If this source group is aligned to a group of target words, say, target words $8$ and $10$, the `TGid` has the vaue $\mathtt{8+10}$.  
 
 A similar mechanism applies to fixations. While keystrokes can only occur in the target text, fixations are observed on source and trarget words. Thus, a fixation may occur on a source word $7$ which is associated with target words $5$ and $6$. If this target group is associated with source words  $7$ and $8$, the `SGid` of this fixation is $7+8$, while `TTid` is $5$. 
 
@@ -48,17 +48,14 @@ As `KUI` $\le$ `PUB`, every PU consists of one or more KU(s). Thus, there is no 
 Lacruz and colleagues[^lacruz] introduce several metrics to compute the relation between text production (i.e., sequences of fluent typing) and pausing, assuming that keystroke pauses are "good indicators of cognitive demand in monolingual language production and in translation." 
 Their metrics include, among others: 
 
-- Pause Ratio: 
-
-   $$PR =\frac{\text{total pause time in segment}}{\text{total time in segment}}$$
+- Pause Ratio:
+$$PR =\frac{\text{total pause time in segment}}{\text{total time in segment}}$$
     
 - Average Pause Ratio:  
-
-    $$APR =\frac{\text{average time per pause}}{\text{average time per words}}$$
+$$APR =\frac{\text{average time per pause}}{\text{average time per words}}$$
     
 - Pause to Word Ratio: 
-
-    $$PWR =\frac{\text{number of pauses in segment}}{\text{number of words in segment}}$$
+$$PWR =\frac{\text{number of pauses in segment}}{\text{number of words in segment}}$$
 
 The TPR-DB provides basic features for computing these and other pause metrics on the segment level (SG). 
 The pause metrics rely on a notion of $\mathtt{pause}$, which has been a topic of discussion and controversy for many years. 
