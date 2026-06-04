@@ -6,20 +6,20 @@ icon: lucide/clock-8
 Process features capture the affective, cognitive and behavioral dynamics of action (e.g., translation) as they unfold in time. In the context of the TPR-DB 3.0, they comprise keystroke logging measures — such as production pauses and typing bursts — and gaze metrics derived from eye-tracking, including fixation durations, regressive eye movements, and re-reading behavior. 
 Many of those features are described in the [TPR-DB version 2.0](https://drive.google.com/file/d/1FgOSNcpbjlxdo6MM_jf3Pw5wDS6S9-BB/view). 
 
-The definitions of many TPR-DB features, such as `Dur`, `Ins`, `Del`, `FixS`, `FixT`, etc. have not changed in the TPR-DB 3.0, although - due to a redefinition of [word boundaries](#Word Boundaries) and the reimplementation of the [The TPR Pipeline](#The TPR Pipeline) in Python along with algorithmic changes - their values may be silightly different. In addition, some features are now differently defined. 
+The definitions of many TPR-DB features, such as `Dur`, `Ins`, `Del`, `FixS`, `FixT`, etc. have not changed in the TPR-DB 3.0, although - due to a redefinition of [word boundaries](#Word Boundaries) and the reimplementation of the [The TPR Pipeline](#The TPR Pipeline) in Python along with several algorithmic changes - their values may be silightly different. In addition, some features are now differently defined. 
 
 This section therefore, mainly focuses on new features or features for which the definition has changed.
 
 
 ## Source and Target Groups and IDs 
 
-The features `STid`, `TTid`, `SGid`, and `TGid` appear in several TPR-DB tables. `STid`and `TTid` are indexes of individual tokens in the source and target text respectively, and are, therefore, integers. `SGid` and `TGid` (may) refer to gropus of words and are, therefore, strings, i.e., the concatenation of several token IDs, e.g., $\mathtt{8+10}$. 
+The features `STid`, `TTid`, `SGid`, and `TGid` appear in several TPR-DB tables. `STid`and `TTid` are indexes of individual tokens in the source and target text respectively, and are, therefore, integers. `SGid` and `TGid` (may) refer to gropus of words and are, therefore, strings, i.e., the concatenation of several token IDs, e.g., "$\mathtt{8+10}$". 
 
 During [keystroke-to-word mapping](#Keystroke-to-word Mapping) each keystroke is associated with a unique target word. The Id of this target word is the `TTid`, an integer, in the KD file. During [Bilingual Alignment](#Bilingual Alignment) source words and target words are connected in a way such that one target word can be associated with several source words,  i.e., the `SGid`. Each `SGid` is, in turn, aligned with one or more target words, which together are the `TGid`. Thus, the `TTid` is part of the `TGid`, but the latter may contain several elements. The `STid` is smallest number in the source group. 
 
-For instance, a target token $\mathsf{8}$ can be aligned with source tokens $\mathtt{8}$ and $\mathbb{9}$, thus the `SGid` value is $\mathsf{8+9}$ and `STid` is $\mathtt{8}$. If this source group is aligned to a group of target words, say, target words $8$ and $10$, the `TGid` has the vaue $\mathtt{8+10}$.  
+For instance, a target token "$\mathtt{8}$" can be aligned with source tokens "$\mathtt{8}$" and "$\mathtt{9}$", thus the `SGid` value is "$\mathtt{8+9}$" and `STid` is "$\mathtt{8}$". If this source group is aligned to a group of target words, say, target words "$\mathtt{8}$" and $\mathtt{10}$", the `TGid` has the vaue "$\mathtt{8+10}$".  
 
-A similar mechanism applies to fixations. While keystrokes can only occur in the target text, fixations are observed on source and trarget words. Thus, a fixation may occur on a source word $7$ which is associated with target words $5$ and $6$. If this target group is associated with source words  $7$ and $8$, the `SGid` of this fixation is $7+8$, while `TTid` is $5$. 
+A similar mechanism applies to fixations. While keystrokes can only occur in the target text, fixations are observed on source and trarget words. Thus, a fixation may occur on a source word $7$ which is associated with target words "$\mathtt{5}$" and "$\mathtt{6}$". If this target group is associated with source words "$\mathtt{7}$" and "$\mathtt{8}"$, the `SGid` of this fixation is "$\mathtt{7+8}$", while `TTid` is $"\mathtt{5}"$. 
 
 This same principle applies to these features also in the other tables, including AU, KU, PU, ST, TT, etc. where the ID refers to the token, while the group feature relates to the alignment group to which the unit refers.
 
@@ -29,7 +29,8 @@ This same principle applies to these features also in the other tables, includin
 As for the [TPR-DB version 2.0](https://drive.google.com/file/d/1FgOSNcpbjlxdo6MM_jf3Pw5wDS6S9-BB/view), also the TPR-DB 3.0 fragments the flow of keystrokes into processing units. Keystroke-based processing units are separated by a pre-defined lag of time between successive keystrokes (aka inter keystroke intervals, IKIs). The TPD-DB 3.0 distinguishes between two tresholds which, respecively, separate Keystroke Units (KUs) and Production Units (PUs). KUs consist of at least one keystroke separated from the next KU by an IKI $\ge$ `KUI` (KU Interruption); PUs are separated by an IKI $\ge$ `PUB`, a PU Break. Bandaru and others [^Bandaru] define these thresholds as: 
 
 - Keystroke Units (KUs) : $KUI = 2 \times median(\text{within word IKI})$
-- Production Units (PUs) : IKI duration the quantile: $\frac{\text{text length}}{\text{number of 3-word chunks}}$ 
+- Production Units (PUs) : IKI duration the quantile:
+  $\frac{\text{text length}}{\text{number of 3-word chunks}}$ 
 
 KUs and PUs are enumerated in two separate tables. 
 KU tables enumerate the sequence of KUs and the intervening keystroke pauses (KUI, and PUB) in their sequential order. The `Type` of a KU can be one of `I`, `C` or `D`, depending on whether the keystrokes are only insertions, deletions or both insertions and delations, respecively. A keystroke pause can be `K`, (KUI) or a `P` (PUB). . 
@@ -49,13 +50,13 @@ Lacruz and colleagues[^lacruz] introduce several metrics to compute the relation
 Their metrics include, among others: 
 
 - Pause Ratio:
-$$PR =\frac{\text{total pause time in segment}}{\text{total time in segment}}$$
+$PR =\frac{\text{total pause time in segment}}{\text{total time in segment}}$
     
 - Average Pause Ratio:  
-$$APR =\frac{\text{average time per pause}}{\text{average time per words}}$$
+$APR =\frac{\text{average time per pause}}{\text{average time per words}}$
     
 - Pause to Word Ratio: 
-$$PWR =\frac{\text{number of pauses in segment}}{\text{number of words in segment}}$$
+$PWR =\frac{\text{number of pauses in segment}}{\text{number of words in segment}}$
 
 The TPR-DB provides basic features for computing these and other pause metrics on the segment level (SG). 
 The pause metrics rely on a notion of $\mathtt{pause}$, which has been a topic of discussion and controversy for many years. 
