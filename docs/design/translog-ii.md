@@ -107,9 +107,9 @@ For our English-to-Chinese example:
 
 ![Opening and running a keylogging experiment in Translog-II](img/figure5.png)
 
-!!! warning
+!!! note
 
-    To facilitate later processing with the CRITT TPR-DB, name the file using the TPR-DB naming convention. For example, `P01_T1`, where `P01` identifies the participant and `T1` indicates a translation-from-scratch task with source text 1. See the [TPR-DB naming conventions](https://sites.google.com/site/centretranslationinnovation/tpr-db/uploading?authuser=0#h.p_ID_175) for details.
+    To facilitate later processing with the CRITT TPR-DB, name the file using the TPR-DB naming convention. For example, `P01_T1`, where `P01` identifies the participant and `T1` indicates a translation-from-scratch task with source text 1. See the [TPR-DB naming conventions](https://critt-kent.github.io/TPR-DB-documentation/design/file-naming/) for details.
 
 ### Step 4 — Replay and analyze (optional)
 
@@ -123,7 +123,7 @@ All three views can be opened simultaneously and synchronized so the cursor in a
 
 ![Replaying keystroke logging data in Translog-II](img/figure6.png)
 
-!!! warning
+!!! note
 
     The user view and linear view do not function reliably with gaze data, and their statistical outputs may be inaccurate when eye-tracking information is included. For precise analysis involving gaze data, upload the log files to the CRITT TPR-DB and use the generated tables instead.
 
@@ -145,7 +145,6 @@ When conducting experiments with languages that require IMEs (Chinese, Japanese,
 ## 4. Further Resources
 
 - **Download Translog-II:** [CRITT website](https://sites.google.com/site/centretranslationinnovation/translog-ii)
-- **TPR-DB 3.0 documentation:** [CRITT TPR-DB](https://critt-kent.github.io/TPR-DB-documentation/)
 - **TPR-DB 3.0 data tables:** [Features table](https://critt-kent.github.io/TPR-DB-documentation/tables/types/)
 - **Auxiliary tools:** [Semi-automatic adjustment tool](https://sites.google.com/site/centretranslationinnovation/tpr-db/auxilliary-tools)
 - **Progression graphs:** [Shiny R interface](https://critt.as.kent.edu/shiny/ProgGraph/)
